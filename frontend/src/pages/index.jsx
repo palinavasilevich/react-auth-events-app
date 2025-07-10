@@ -7,3 +7,4 @@ export { default as HomePage } from "./Home/Home";
 export { default as NewEventPage } from "./NewEvent/NewEvent";
 export { default as EventsLayout } from "./Layouts/EventsLayout";
 export { default as NewsletterPage } from "./Newsletter/Newsletter";
+export { default as AuthenticationPage } from "./Authentication/Authentication";
