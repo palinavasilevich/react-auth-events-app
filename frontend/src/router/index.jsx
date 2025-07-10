@@ -10,6 +10,7 @@ import {
   EditEventPage,
   EventsLayout,
   NewsletterPage,
+  AuthenticationPage,
 } from "../pages";
 
 import { loader as eventDetailsLoader } from "../pages/EventDetails/loaders/eventDetailsLoader";
@@ -48,7 +49,6 @@ const router = createBrowserRouter([
               { path: "edit", element: <EditEventPage />, action: eventAction },
             ],
           },
-
           { path: "new", element: <NewEventPage />, action: eventAction },
         ],
       },
@@ -57,6 +57,7 @@ const router = createBrowserRouter([
         element: <NewsletterPage />,
         action: newsletterAction,
       },
+      { path: "auth", element: <AuthenticationPage /> },
     ],
   },
 ]);
