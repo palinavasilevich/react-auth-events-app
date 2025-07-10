@@ -1,11 +1,13 @@
 import { redirect } from "react-router-dom";
 import { API_URL } from "../../../constants";
+import { getAuthToken } from "../../../utils/auth";
 
 export async function action({ request, params }) {
   const method = request.method;
   const formData = await request.formData();
-
   const eventData = Object.fromEntries(formData.entries());
+
+  const token = getAuthToken();
 
   let url = `${API_URL}/events`;
 
@@ -18,6 +20,7 @@ export async function action({ request, params }) {
     method,
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(eventData),
   });

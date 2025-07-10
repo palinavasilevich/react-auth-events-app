@@ -1,5 +1,6 @@
 import { redirect } from "react-router-dom";
 import { API_URL, AUTH_MODE } from "../../../constants";
+import { setAuthToken } from "../../../utils/auth";
 
 export async function authAction({ request }) {
   const searchParams = new URL(request.url).searchParams;
@@ -37,6 +38,11 @@ export async function authAction({ request }) {
       }
     );
   }
+
+  const resData = await response.json();
+  const token = resData.token;
+
+  setAuthToken(token);
 
   return redirect("/");
 }
