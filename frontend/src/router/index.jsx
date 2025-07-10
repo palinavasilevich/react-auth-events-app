@@ -21,12 +21,15 @@ import { action as newsletterAction } from "../pages/Newsletter/actions/newslett
 import { action as deleteEventAction } from "../pages/EventDetails/actions/deleteEventAction";
 import { authAction } from "../pages/Authentication/actions/authAction";
 import { logoutAction } from "../components/Logout/logoutAction";
+import { tokenLoader } from "../utils/auth";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    id: "root",
+    loader: tokenLoader,
     children: [
       { index: true, element: <HomePage /> },
       {
