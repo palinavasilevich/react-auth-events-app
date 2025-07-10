@@ -1,23 +1,17 @@
 import { redirect } from "react-router-dom";
+import { API_URL } from "../../../constants";
 
 export async function action({ request, params }) {
   const method = request.method;
   const formData = await request.formData();
 
-  // const eventData = {
-  //   title: formData.get("title"),
-  //   image: formData.get("image"),
-  //   date: formData.get("date"),
-  //   description: formData.get("description"),
-  // };
-
   const eventData = Object.fromEntries(formData.entries());
 
-  let url = "http://localhost:8080/events";
+  let url = `${API_URL}/events`;
 
   if (method === "PATCH") {
     const eventId = params.eventId;
-    url = `http://localhost:8080/events/${eventId}`;
+    url = `${API_URL}/events/${eventId}`;
   }
 
   const response = await fetch(url, {

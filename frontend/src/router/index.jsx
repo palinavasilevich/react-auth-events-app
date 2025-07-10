@@ -19,6 +19,7 @@ import { loader as eventsLoader } from "../pages/Events/loaders/eventsLoader";
 import { action as eventAction } from "../components/EventForm/actions/eventAction";
 import { action as newsletterAction } from "../pages/Newsletter/actions/newsletterAction";
 import { action as deleteEventAction } from "../pages/EventDetails/actions/deleteEventAction";
+import { authAction } from "../pages/Authentication/actions/authAction";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
         element: <NewsletterPage />,
         action: newsletterAction,
       },
-      { path: "auth", element: <AuthenticationPage /> },
+      { path: "auth", element: <AuthenticationPage />, action: authAction },
     ],
   },
 ]);
