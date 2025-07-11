@@ -3,5 +3,6 @@ import { removeAuthToken } from "../../utils/auth";
 
 export function logoutAction() {
   removeAuthToken();
+  localStorage.removeItem("expiration");
   return redirect("/");
 }

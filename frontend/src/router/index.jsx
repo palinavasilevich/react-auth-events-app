@@ -20,7 +20,7 @@ import { action as eventAction } from "../components/EventForm/actions/eventActi
 import { action as newsletterAction } from "../pages/Newsletter/actions/newsletterAction";
 import { action as deleteEventAction } from "../pages/EventDetails/actions/deleteEventAction";
 import { authAction } from "../pages/Authentication/actions/authAction";
-import { logoutAction } from "../components/Logout/logoutAction";
+import { logoutAction } from "../pages/Logout/logoutAction";
 import { checkAuthLoader, tokenLoader } from "../utils/auth";
 
 const router = createBrowserRouter([
